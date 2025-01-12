@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4502761123153828}
-  - component: {fileID: 3731618180272512435}
+  - component: {fileID: 8553926106773309530}
   m_Layer: 0
   m_Name: JukeBox_Model
   m_TagString: Untagged
@@ -210,7 +210,7 @@ Transform:
   - {fileID: 4988379043803992}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90.00001, y: 180, z: 0}
---- !u!82 &3731618180272512435
+--- !u!82 &8553926106773309530
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
