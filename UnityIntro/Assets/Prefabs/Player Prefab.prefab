@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 583432880125480003, guid: 997bf512c0426034bbe4a566a059241b, type: 3}
-  projectileSpawnPoint: {fileID: 6227195253295683196}
+  projectileSpawnPoint: {fileID: 3259005939231433328}
   fireKey: 102
 --- !u!1 &2360771697899432343
 GameObject:
