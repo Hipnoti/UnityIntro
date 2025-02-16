@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3236814380788421438}
   - component: {fileID: -1905255090046310796}
   - component: {fileID: -859200871918607292}
+  - component: {fileID: 467797550542456168}
+  - component: {fileID: 6898120496705162712}
+  - component: {fileID: 4846302668452432365}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Untagged
@@ -46,8 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e2c9235edec5649bf04df285ed949b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1.34
+  movementSpeed: 10
   rotationSpeed: 10
+  stopOnShoot: 1
+  rigidbody: {fileID: 467797550542456168}
 --- !u!114 &-859200871918607292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +68,69 @@ MonoBehaviour:
   projectilePrefab: {fileID: 583432880125480003, guid: 997bf512c0426034bbe4a566a059241b, type: 3}
   projectileSpawnPoint: {fileID: 3259005939231433328}
   fireKey: 102
+  movingObjectComponent: {fileID: -1905255090046310796}
+--- !u!54 &467797550542456168
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860239826994697627}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!136 &6898120496705162712
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860239826994697627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4846302668452432365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860239826994697627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76069be27cace94e987cc42cf887bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2360771697899432343
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +142,6 @@ GameObject:
   - component: {fileID: 452349473270120038}
   - component: {fileID: 4416265699951392686}
   - component: {fileID: 5272163473580196210}
-  - component: {fileID: 8098220419719431285}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -152,29 +219,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8098220419719431285
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2360771697899432343}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6227195253295683196
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +261,6 @@ GameObject:
   - component: {fileID: 8496537445363708846}
   - component: {fileID: 4977527926850622837}
   - component: {fileID: 4055756844720774648}
-  - component: {fileID: 8133925486023253622}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -293,26 +336,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8133925486023253622
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657542391067234151}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

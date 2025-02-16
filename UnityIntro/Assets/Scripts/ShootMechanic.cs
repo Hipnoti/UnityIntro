@@ -6,6 +6,9 @@ public class ShootMechanic : MonoBehaviour
     public Transform projectileSpawnPoint;
 
     public KeyCode fireKey = KeyCode.Mouse0;
+    
+    public MovingObjectWithInput movingObjectComponent;
+    
     void Start()
     {
         
@@ -15,6 +18,10 @@ public class ShootMechanic : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(fireKey))
+        {
             Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.transform.rotation);
+            if (movingObjectComponent.stopOnShoot == true)
+                movingObjectComponent.StopMoving();
+        }
     }
 }
