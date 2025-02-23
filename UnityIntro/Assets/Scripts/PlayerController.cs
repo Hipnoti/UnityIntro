@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public int currentHP = 100;
+    public MeshRenderer graphicsMeshRenderer;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -19,9 +20,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     MeshRenderer meshRenderer = other.gameObject.GetComponent<MeshRenderer>();
-    //     meshRenderer.material.color = Color.red;
-    // }
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collision with  " + other.gameObject.name);
+        // MeshRenderer meshRenderer = other.gameObject.GetComponent<MeshRenderer>();
+        // meshRenderer.material.color = Color.red;
+    }
 }
