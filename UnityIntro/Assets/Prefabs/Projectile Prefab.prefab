@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8523786421623660194}
   - component: {fileID: 8923506810312938570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4988300677913511380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8284270427793012494}
   - component: {fileID: 8537426060549755356}
   - component: {fileID: 2063493502991142069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
